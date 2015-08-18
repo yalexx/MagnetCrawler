@@ -1,0 +1,9 @@
+{
+  "sources": [
+    "http://audiobookbay.co/"
+    ],
+  "localData": true,
+  "initialPath": "/",
+  "initialPort": "8080",
+  "initialProtocol": "https"
+}

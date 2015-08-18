@@ -1,20 +1,21 @@
-var Crawler = require("simplecrawler");
+
+var crawler = require("simplecrawler");
 var fs = require("fs");
 var _ = require('underscore');
 
 // Fetch adress url
-Crawler.crawl(
+crawler.crawl(
 
   "http://www.gametableonline.com/forum/"
 
-  ).on("fetchstart",function(queueItem) {
-  console.log("Starting request for:",queueItem.url);
-})
+  ).on("fetchstart", function (queueItem) {
+    console.log("Starting request for:", queueItem.url);
+  })
 
 // Fetch url html
-.on("fetchcomplete",function(queueItem, responseBuffer) {
-  findEmail(responseBuffer);
-});
+  .on("fetchcomplete", function (queueItem, responseBuffer) {
+    findEmail(responseBuffer);
+  });
 
 function findEmail(responseBuffer) {
   var buffer = responseBuffer.toString();
@@ -32,10 +33,10 @@ function findEmail(responseBuffer) {
 
 // Check if the email is new, if yes store in data
 function storeNewEmail(email) {
-  if(email != undefined ) {
+  if (email != undefined) {
     console.log(email);
     var data = fs.readFileSync('data.txt').toString();
-    var dataArray = data.split("\n");
-    fs.appendFileSync("data.txt", email, "UTF-8",{'flags': 'a+'});
+
+    fs.appendFileSync("data.txt", email, "UTF-8", { 'flags': 'a+' });
   }
 }
