@@ -1,0 +1,9 @@
+{
+  "name": "MagnetCrawler",
+  "version": "1.0.0",
+  "dependencies": {
+    "simplecrawler": "^0.7.0",
+    "underscore": "^1.13.6",
+    "wrench": "^1.5.9"
+  }
+}
