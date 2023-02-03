@@ -5,7 +5,7 @@ var _ = require('underscore');
 // Fetch adress url
 Crawler.crawl(
 
-  "https://bmwpower-bg.net/forums/"
+  "http://www.teenproblem.net/forum/"
 
   ).on("fetchstart",function(queueItem) {
   console.log("Starting request for:",queueItem.url);
